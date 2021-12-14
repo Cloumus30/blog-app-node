@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partial/head') %> 
+    <script src="https://cdn.tiny.cloud/1/s5b8jmmq6w03xfpbxoe6eophnsimtz9igqk61qsmgq2d2l97/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <title>Input Post</title>
+</head>
+
+<body>    
+<%- include('partial/header') %> 
+
+    <!-- Blog Start -->
+    <div class="blog_main">
+        <% if (locals.user !== null) { %>
+            <div class="container-fluid">
+                <div class="d-flex justify-content-center mt-5">
+                    <h2 class="h2">Input Post</h2>
+                </div>
+    
+                <form action="/insert-post" method="POST">
+                    <label for="nama">Judul Pos:</label>
+                    <input type="text" name="title">
+                    <br>
+                    <label for="post">Post</label>
+                    <textarea name="body">
+                        <p>Blog Math</p>
+                    </textarea>
+                    <label for="geogebra">Input link Geogebra</label>
+                    <input width="100px" type="text" name="geogebra" id="geogebra">
+                    <button class="btn btn-success" type="submit" id="form-button">Submit</button>
+                </form>
+                <div style="height: 120px;"></div>
+            </div>
+        <% }%>
+    </div> 
+
+    <!--blog end -->
+
+    
+    
+    <%- include('partial/copyright')  %> 
+
+    <%- include('partial/footer') %> 
+
+    <script src="/js/insert_post.js"></script>
+</body>
+</html>
