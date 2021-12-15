@@ -10,7 +10,7 @@ const checkToken = ()=>{
         // Check jwt Cookie
             if(jwtCookie){
             // verify jwt token and decode it
-            jwt.verify(jwtCookie,'blognisfa', async (err,decoded)=>{
+            jwt.verify(jwtCookie,'blog-cloudy', async (err,decoded)=>{
                 if(err){
                     console.log(err);
                 }
@@ -50,7 +50,7 @@ const currentUser = (req,res,next)=>{
     // console.log(jwtCookie);
     if(jwtCookie){
         // Verify JWT TOken and decode it
-        jwt.verify(jwtCookie,'blognisfa', async (err, decoded)=>{
+        jwt.verify(jwtCookie,'blog-cloudy', async (err, decoded)=>{
             if(err){
                 console.log(err);
             }
@@ -90,7 +90,7 @@ const checkUser = (req,res,next)=>{
     // console.log(jwtCookie);
     if(jwtCookie){
         // Verify JWT TOken and decode it
-        jwt.verify(jwtCookie,'blognisfa', async (err, decoded)=>{
+        jwt.verify(jwtCookie,'blog-cloudy', async (err, decoded)=>{
             if(err){
                 console.log(err);
             }

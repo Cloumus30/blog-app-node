@@ -79,19 +79,18 @@ const insertPost = async (req,res)=>{
     const request = req.body;
     // console.log(request);
     if(request.title==''){
-        request.title="Judul post Default ";
+        request.title="Post Title Default ";
     }
     try{
         const data = await Post.create({
             title:request.title,
             body:request.body,
-            geogebra:request.geogebra
         });
-        await req.flash('info', 'Post berhasil ditambahkan');
+        await req.flash('info', 'Add Post Successfull');
         res.redirect('/blog');
     }catch(err){
         console.log(err);
-        await req.flash('error',`Post tidak berhasil ditambah: ${err}`);
+        await req.flash('error',`Add Post Failed: ${err}`);
         res.redirect('/blog');
     }
 };
@@ -104,17 +103,16 @@ const updatePost = async(req,res)=>{
         const data = await Post.update({
             title:request.title,
             body:request.body,
-            geogebra:request.geogebra,
         },{
             where:{
                 id:id
             }
         });
-        await req.flash('info', 'Post berhasil diupdate');
+        await req.flash('info', 'Post Updated Successfull');
         res.redirect(`/blog`);
     } catch (error) {
         console.log(error);
-        await req.flash('error', `Post gagal diupdate: ${error}`);
+        await req.flash('error', `Post Updated Failed: ${error}`);
         res.redirect('/blog');
     }
 };
@@ -131,10 +129,10 @@ const deletePost = async(req,res)=>{
         const result = {
             notif:"berhasil dihapus"
         }
-        await req.flash('info', `Post berhasil dihapus`);
+        await req.flash('info', `Post Deleted Successfull`);
         return res.redirect("/blog");
     }catch(err){
-        await req.flash('error', `Post gagal dihapus: ${err}`);
+        await req.flash('error', `Post Deleted Failed: ${err}`);
         console.log(err);
         return res.redirect('/blog')
     }

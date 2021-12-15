@@ -5,7 +5,7 @@ const {User} = require(path.join(__dirname,'../models/index'));
 
 //Create JWT Token For Authorized User
 const createToken = (username)=>{
-    return jwt.sign({username},'blognisfa');
+    return jwt.sign({username},'blog-cloudy');
 };
 
 // Check User Authorized for Login or Not
@@ -37,7 +37,7 @@ const checkLogin = async(req,res,next)=>{
                     //password correct
                     await req.flash('info',`Berhasil Login, Hai ${data.name}`);
                     const token = createToken(data.username);
-                    res.cookie('jwtToken',token,{httpOnly:true});
+                    res.cookie('jwtToken',token,{httpOnly:true,maxAge:3600000});
                     return res.redirect('/');
                 }
                 //password does not correct

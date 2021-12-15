@@ -17,15 +17,13 @@
             </div>
 
             <form action="/update-post/<%= post.id %>" method="POST">
-                <label for="nama">Judul Pos:</label>
+                <label for="nama">Post Title:</label>
                 <input type="text" name="title" value="<%= post.title %>">
                 <br>
                 <label for="post">Post</label>
                 <textarea name="body">
                     <%= post.body %> 
                 </textarea>
-                <label for="geogebra">Input link Geogebra</label>
-                <input width="100px" type="text" name="geogebra" id="geogebra" value="<%= post.geogebra %>">
                 <button type="submit" class="btn btn-success" id="form-button">Submit</button>
             </form>
             <div style="height: 120px;"></div>

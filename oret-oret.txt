@@ -1,6 +1,0 @@
-Image handling:
-1. Image autoupload false
-2. tinymce.activeEditor.uploadImages() => command for upload image. place it to onsubmit method of the form 
-    to upload the images first then save post to database. it is done for saving image tag in the post not in base64 format
-3. receive with server and save it.
-4. end

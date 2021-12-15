@@ -17,9 +17,6 @@ module.exports = {
       body: {
         type: Sequelize.TEXT
       },
-      geogebra:{
-        type:Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

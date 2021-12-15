@@ -12,9 +12,9 @@ module.exports = {
      * }], {});
     */
    await queryInterface.bulkInsert('Users',[{
-     name:"Nisfa Lailatul Azizah",
-     username:"nisfalailatul",
-     password:"$2a$12$M1VMgHUUx7GT4rKPwZAOpeE1jQsp4wkf5N96BoqUYBDDCqhAcpEfC", //bcrypt round(12)
+     name:"Demo User",
+     username:"cloudias",
+     password:"$2a$12$Yx0NyeN7n0BgNFoM5K4Apu/X.fEK8xuVmENDRBvzbyjj.oRhdxybW", //bcrypt round(12)
      createdAt: new Date(),
      updatedAt: new Date()
    }])
